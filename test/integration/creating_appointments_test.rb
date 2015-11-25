@@ -9,9 +9,6 @@ class CreateAppointmentsTest < ActionDispatch::IntegrationTest
     {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s}
 
     assert_equal 201, response.status
-    # assert_equal Mime::JSON, response.content_type
-    # appointment = json(response.body)
-    # assert_equal appointment_url(appointment[:id]), response.location
   end
 
   test 'appointment must have start_time' do
