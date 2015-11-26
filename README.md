@@ -13,7 +13,7 @@ Please use the following format for start and end times.
   * Appointments by Start Time  
     Will return all appointments 3 hours before and 3 hours after the specified start time.  
     GET https://hidden-cliffs-4643.herokuapp.com/appointments?start_time=      
-  * Appointments by End Time
+  * Appointments by End Time  
     Will return all appointments 3 hours before and 3 hours after the specified start time.  
     GET https://hidden-cliffs-4643.herokuapp.com/appointments?end_time=      
   * Appointments by First Name   
