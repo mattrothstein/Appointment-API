@@ -8,11 +8,18 @@ Please use the following format for start and end times.
 <tt>yyyy-mm-dd h:m</tt>
 
 * LIST  
-All Appointments = GET https://hidden-cliffs-4643.herokuapp.com/appointments     
-Appointments by Start Time = GET https://hidden-cliffs-4643.herokuapp.com/appointments?start_time=  
-Appointments by End Time = GET https://hidden-cliffs-4643.herokuapp.com/appointments?end_time=  
-Appointments by First Name = GET https://hidden-cliffs-4643.herokuapp.com/appointments?first_name=  
-Appointments by Last Name = GET https://hidden-cliffs-4643.herokuapp.com/appointments?last_name=  
+  * All Appointments    
+    GET https://hidden-cliffs-4643.herokuapp.com/appointments        
+  * Appointments by Start Time  
+    - will return all appointments 3 hours before and 3 hours after the specified start time.  
+    GET https://hidden-cliffs-4643.herokuapp.com/appointments?start_time=      
+  * Appointments by End Time
+    - will return all appointments 3 hours before and 3 hours after the specified start time.  
+    GET https://hidden-cliffs-4643.herokuapp.com/appointments?end_time=      
+  * Appointments by First Name   
+    GET https://hidden-cliffs-4643.herokuapp.com/appointments?first_name=      
+  * Appointments by Last Name   
+    GET https://hidden-cliffs-4643.herokuapp.com/appointments?last_name=      
 
 * CREATE  
 POST https://hidden-cliffs-4643.herokuapp.com/appointments       
