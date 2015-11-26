@@ -1,4 +1,3 @@
-== README
 
 This API was made to CREATE, READ, UPDATE and DELETE Appointments in our database. All appointments must have valid first and last names. You cannot create new appointments
 with start and end times that overlap existing appointments. All appointments must be scheduled in the future.
