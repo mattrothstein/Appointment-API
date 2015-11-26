@@ -11,19 +11,19 @@ private
 
   def start_time_in_future
     if self.start_time < DateTime.now
-      errors.add(start_time, "start time must be in future")
+      errors.add(:start_time, "start time must be in future")
     end
   end
 
   def end_time_in_future
     if self.end_time < DateTime.now
-      errors.add(end_time, "end time must be in future")
+      errors.add(:end_time, "end time must be in future")
     end
   end
 
   def end_time_greater_than_start_time
     if self.start_time > self.end_time
-      errors.add(end_time, "end time must be after start time")
+      errors.add(:end_time, "end time must be after start time")
     end
   end
 
