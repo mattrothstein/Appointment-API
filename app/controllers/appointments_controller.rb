@@ -21,19 +21,11 @@ class AppointmentsController < ApplicationController
 
   def create
     appointment = Appointment.new(appointment_params)
-    if appointment.future?
-      if appointment.no_overlap?
         if appointment.save
           render json: appointment, status: 201, location: appointment
         else
           render json: appointment.errors, status: 422
         end
-      else
-        render json: appointment.errors, status: 422
-      end
-    else
-      render json: appointment.errors, status: 422
-    end
   end
 
   def update

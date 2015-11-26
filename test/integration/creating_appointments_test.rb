@@ -91,8 +91,8 @@ class CreateAppointmentsTest < ActionDispatch::IntegrationTest
 
   test 'appointment time must not overlap any other appointments' do
     post '/appointments',
-  { appointment: { start_time: '2013-11-29 14:00:00',
-                    end_time: '2016-11-29 14:05:00',
+  { appointment: { start_time: '2017-11-01 07:00:00',
+                    end_time: '2017-11-01 07:05:00',
                     first_name: 'matt',
                     last_name: 'rothstein'}
     }.to_json,
