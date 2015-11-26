@@ -4,8 +4,15 @@ class Appointment < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validate  :start_time_in_future, :end_time_in_future, :end_time_greater_than_start_time,
-            :start_time_overlap, :end_time_overlap, :on => :create
+            :start_time_overlap, :end_time_overlap, on: :create
 
+  def time_not_nil
+    if self.start_time.nil? || self.end_time.nil?
+      false
+    else
+      true
+    end
+  end
 
 private
 
@@ -23,7 +30,7 @@ private
 
   def end_time_greater_than_start_time
     if self.start_time > self.end_time
-      errors.add(:end_time, "end time must be after start time")
+      errors.add(:send_time, "end time must be after start time")
     end
   end
 

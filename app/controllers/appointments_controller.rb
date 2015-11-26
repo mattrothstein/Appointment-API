@@ -21,17 +21,21 @@ class AppointmentsController < ApplicationController
 
   def create
     appointment = Appointment.new(appointment_params)
+      if appointment.time_not_nil
         if appointment.save
           render json: appointment, status: 201, location: appointment
         else
           render json: appointment.errors, status: 422
         end
+      else
+        render json: appointment.errors, status: 422
+      end
   end
 
   def update
     appointment = Appointment.find(params[:id])
     if appointment.update(appointment_params)
-        render json: appointment, status: 200
+      render json: appointment, status: 200
     else
       render json: appointment.errors, status: 422
     end
