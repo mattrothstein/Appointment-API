@@ -4,10 +4,10 @@ class AppointmentsController < ApplicationController
     appointments = Appointment.all
 
     if start_time = params[:start_time]
-      appointments = Appointment.where(start_time: start_time.to_datetime)
+      appointments = Appointment.where(start_time: (start_time.to_datetime - 3.hours)..(start_time.to_datetime + 3.hours))
     end
     if end_time = params[:end_time]
-      appointments = Appointment.where(end_time: end_time.to_datetime)
+      appointments = Appointment.where(end_time: (end_time.to_datetime - 3.hours)..(end_time.to_datetime + 3.hours))
     end
     if first_name = params[:first_name]
       appointments = Appointment.where(first_name: first_name)
@@ -18,7 +18,7 @@ class AppointmentsController < ApplicationController
 
     render json: appointments , status: 200
   end
-  
+
   def create
     appointment = Appointment.new(appointment_params)
     if appointment.future?
