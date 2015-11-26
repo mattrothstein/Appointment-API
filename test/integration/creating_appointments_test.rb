@@ -98,6 +98,14 @@ class CreateAppointmentsTest < ActionDispatch::IntegrationTest
     }.to_json,
     {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s}
 
+    post '/appointments',
+  { appointment: { start_time: '2017-11-01 07:00:00',
+                    end_time: '2017-11-01 07:05:00',
+                    first_name: 'matt',
+                    last_name: 'rothstein'}
+    }.to_json,
+    {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s}
+
     assert_equal 422, response.status
     assert_equal Mime::JSON, response.content_type
   end

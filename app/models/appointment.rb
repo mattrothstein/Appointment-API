@@ -3,7 +3,7 @@ class Appointment < ActiveRecord::Base
   validates :end_time, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validate  :start_time_in_future, :end_time_in_future, :end_time_greater_than_start_time, 
+  validate  :start_time_in_future, :end_time_in_future, :end_time_greater_than_start_time,
             :start_time_overlap, :end_time_overlap, :on => :create
 
 
