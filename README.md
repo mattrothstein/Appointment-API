@@ -7,20 +7,20 @@ How to use the API:
 Please use the following format for start and end times.   
 <tt>mm/dd/yy h:m</tt>
 
-* LIST
+* LIST  
 All Appointments = GET https://hidden-cliffs-4643.herokuapp.com/appointments     
 Appointments by Start Time = GET https://hidden-cliffs-4643.herokuapp.com/appointments?start_time=  
 Appointments by End Time = GET https://hidden-cliffs-4643.herokuapp.com/appointments?end_time=  
 Appointments by First Name = GET https://hidden-cliffs-4643.herokuapp.com/appointments?first_name=  
 Appointments by Last Name = GET https://hidden-cliffs-4643.herokuapp.com/appointments?last_name=  
 
-* CREATE
+* CREATE  
 POST https://hidden-cliffs-4643.herokuapp.com/appointments       
 <tt>-d '{ "appointment":{"first_name": "Matt", "last_name": "Rothstein", "start_time":"12/01/15 10:00", "end_time": "12/01/15 10:05", "comments" : "optional"}}'</tt>
 
-* UPDATE
+* UPDATE  
 PATCH https://hidden-cliffs-4643.herokuapp.com/appointments/:id   
 <tt>-d '{ "appointment":{"start_time":"12/01/15 09:55"}}'</tt>
 
-* DELETE
+* DELETE  
 DELETE https://hidden-cliffs-4643.herokuapp.com/appointments/:id   
